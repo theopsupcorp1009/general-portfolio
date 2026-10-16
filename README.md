@@ -78,7 +78,7 @@ The website is architected as an authentic multi-page application with 15 distin
 
 ```bash
 # Clone the repository
-git clone https://github.com/mrkhan393/general-portfolio.git
+git clone https://github.com/theopsupcorp1009/general-portfolio.git
 cd general-portfolio
 
 # Install dependencies
