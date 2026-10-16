@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Globe, Building2 } from "lucide-react";
 import { LinkedinIcon, GithubIcon } from "./SocialIcons";
 import { personalInfo } from "@/data/portfolioData";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,8 +13,15 @@ export default function Footer() {
         {/* Brand & Copyright */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4 text-center sm:text-left">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-6 h-6 rounded bg-[var(--primary)] flex items-center justify-center text-white font-bold text-xs">
-              MR
+            <div className="relative w-6 h-6 rounded overflow-hidden">
+              <Image
+                src="/images/mr-khan-dipu.jpg"
+                alt="M R Khan Dipu"
+                fill
+                sizes="24px"
+                className="object-cover"
+                priority
+              />
             </div>
             <span className="font-bold text-sm tracking-wider text-[var(--text-primary)]">
               M R KHAN DIPU
