@@ -24,8 +24,8 @@ export default function FeaturedProjects() {
         </div>
 
         {/* 5-Project Grid matching screenshot and responsive breakpoints */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {projectsData.map((project) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          {projectsData.slice(0,3).map((project) => (
             <ProjectCard key={project.id} project={project} featuredOnly />
           ))}
         </div>

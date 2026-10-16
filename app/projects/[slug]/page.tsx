@@ -146,84 +146,107 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </div>
         </div>
 
-        {/* Project Preview */}
-        <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--surface)] shadow-2xl mb-12">
-          {project.slug === "alzheimer-dementia-classifier" || project.slug === "quantum-circuit-explorer" ? (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full h-full group"
-              aria-label={`Open ${project.name} live project`}
-            >
-              <Image
-                src={
-                  project.slug === "alzheimer-dementia-classifier"
-                    ? "/images/alzheimer.png"
-                    : "/images/quantum.png"
-                }
-                alt={`${project.name} screenshot preview`}
-                fill
-                priority
-                sizes="(max-width: 1100px) 100vw, 1100px"
-                className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
-              />
+        {/* Project Preview & Overview */}
+        {project.slug === "alzheimer-dementia-classifier" ||
+        project.slug === "quantum-circuit-explorer" ? (
+          <>
+            {/* Full-width Screenshot Preview */}
+            <div className="relative w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--surface)] shadow-2xl mb-12">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+                aria-label={`Open ${project.name} live project`}
+              >
+                <Image
+                  src={
+                    project.slug === "alzheimer-dementia-classifier"
+                      ? "/images/alzheimer.png"
+                      : "/images/quantum.png"
+                  }
+                  alt={`${project.name} screenshot preview`}
+                  width={1600}
+                  height={900}
+                  priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 1100px) 100vw, 1100px"
+                  className="block w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
+                />
 
-              <div className="absolute inset-0 flex items-end justify-center bg-black/0 transition-colors group-hover:bg-black/30">
-                <span className="mb-6 translate-y-2 rounded-lg bg-black/80 px-5 py-3 text-sm font-medium text-white opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                  Open Live Project ↗
-                </span>
+                <div className="absolute inset-0 flex items-end justify-center bg-black/0 transition-colors group-hover:bg-black/30">
+                  <span className="mb-6 rounded-lg bg-black/80 px-5 py-3 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+                    Open Live Project ↗
+                  </span>
+                </div>
+              </a>
+            </div>
+
+            {/* Overview & Objective */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="rounded-2xl bg-[var(--surface)] border border-[var(--border)] p-6 sm:p-8">
+                <h2 className="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+                  <Layers className="w-5 h-5 text-[var(--primary-light)]" />
+                  Project Overview
+                </h2>
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                  {project.fullOverview}
+                </p>
               </div>
-            </a>
-          ) : (
-            <iframe
-              src={project.liveUrl}
-              title={`${project.name} live preview`}
-              className="absolute inset-0 h-full w-full border-0 bg-white"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          )}
-        </div>
 
-        {/* Medical / Research Disclaimer (Alzheimer Classifier) */}
-        {project.disclaimer && (
-          <div className="mb-10 p-5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3 text-amber-200">
-            <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-            <div className="text-xs sm:text-sm leading-relaxed">
-              <span className="font-bold block text-amber-300 mb-1">
-                Prototype &amp; Educational Disclaimer
-              </span>
-              {project.disclaimer}
+              {project.purpose && (
+                <div className="rounded-2xl bg-[var(--surface)] border border-[var(--border)] p-6 sm:p-8">
+                  <h2 className="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+                    <Cpu className="w-5 h-5 text-[var(--primary-light)]" />
+                    Problem &amp; Objective
+                  </h2>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    {project.purpose}
+                  </p>
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          /* Regular Projects: Preview Left, Overview & Objective Right */
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-12 items-stretch">
+            <div className="lg:col-span-7">
+              <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] lg:aspect-auto lg:h-full min-h-[400px] lg:min-h-[600px] rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--surface)] shadow-xl">
+                <iframe
+                  src={project.liveUrl}
+                  title={`${project.name} live preview`}
+                  className="absolute inset-0 h-full w-full border-0 bg-white"
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <div className="flex-1 rounded-2xl bg-[var(--surface)] border border-[var(--border)] p-6 sm:p-8">
+                <h2 className="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+                  <Layers className="w-5 h-5 text-[var(--primary-light)] shrink-0" />
+                  Project Overview
+                </h2>
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                  {project.fullOverview}
+                </p>
+              </div>
+
+              {project.purpose && (
+                <div className="flex-1 rounded-2xl bg-[var(--surface)] border border-[var(--border)] p-6 sm:p-8">
+                  <h2 className="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+                    <Cpu className="w-5 h-5 text-[var(--primary-light)] shrink-0" />
+                    Problem &amp; Objective
+                  </h2>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    {project.purpose}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         )}
-
-        {/* Project Overview & Purpose */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="rounded-2xl bg-[var(--surface)] border border-[var(--border)] p-6 sm:p-8">
-            <h2 className="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
-              <Layers className="w-5 h-5 text-[var(--primary-light)]" />
-              <span>Project Overview</span>
-            </h2>
-            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-              {project.fullOverview}
-            </p>
-          </div>
-
-          {project.purpose && (
-            <div className="rounded-2xl bg-[var(--surface)] border border-[var(--border)] p-6 sm:p-8">
-              <h2 className="text-lg font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
-                <Cpu className="w-5 h-5 text-[var(--primary-light)]" />
-                <span>Problem &amp; Objective</span>
-              </h2>
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                {project.purpose}
-              </p>
-            </div>
-          )}
-        </div>
 
         {/* Verified Features */}
         <div className="rounded-2xl bg-[var(--surface)] border border-[var(--border)] p-6 sm:p-8 mb-12">
