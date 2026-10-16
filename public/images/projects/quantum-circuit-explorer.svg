@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="qBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091122"/>
+      <stop offset="100%" stop-color="#040711"/>
+    </linearGradient>
+    <linearGradient id="qCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#121e36"/>
+      <stop offset="100%" stop-color="#0a1222"/>
+    </linearGradient>
+    <radialGradient id="sphereGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#7867FF" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#3478F6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0B1220" stop-opacity="0.9"/>
+    </radialGradient>
+    <filter id="qGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="qShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#qBg)"/>
+
+  <!-- Starfield / Quantum Lattice Background -->
+  <g opacity="0.15" stroke="#38BDF8" stroke-width="0.5">
+    <line x1="80" y1="60" x2="140" y2="110"/>
+    <line x1="140" y1="110" x2="200" y2="70"/>
+    <line x1="200" y1="70" x2="250" y2="120"/>
+    <line x1="400" y1="80" x2="480" y2="60"/>
+    <line x1="480" y1="60" x2="520" y2="130"/>
+  </g>
+
+  <!-- Header Mockup -->
+  <rect x="35" y="20" width="530" height="38" rx="8" fill="url(#qCard)" stroke="#20334F" stroke-width="1.2" filter="url(#qShadow)"/>
+  <text x="50" y="44" font-size="16">⚛️</text>
+  <text x="75" y="44" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Quantum Circuit Explorer</text>
+  <rect x="390" y="28" width="160" height="22" rx="4" fill="#1e293b"/>
+  <text x="400" y="43" fill="#60A5FA" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Qiskit Aer • 1024 Shots</text>
+
+  <!-- Main Visual Area: Split into Bloch Sphere (Left) and Circuit Diagram + Histogram (Right) -->
+  
+  <!-- Left Panel: Bloch Sphere Visualization -->
+  <rect x="35" y="68" width="220" height="250" rx="8" fill="url(#qCard)" stroke="#20334F" stroke-width="1.2" filter="url(#qShadow)"/>
+  <text x="50" y="90" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Bloch Sphere Qubit State |ψ⟩</text>
+  
+  <!-- Sphere graphic -->
+  <g transform="translate(145, 185)">
+    <!-- Sphere body -->
+    <circle cx="0" cy="0" r="70" fill="url(#sphereGrad)" stroke="#38BDF8" stroke-width="1.2" opacity="0.6"/>
+    <!-- Equator ellipse -->
+    <ellipse cx="0" cy="0" rx="70" ry="20" fill="none" stroke="#60A5FA" stroke-width="1" stroke-dasharray="3 3"/>
+    <!-- Vertical meridian ellipse -->
+    <ellipse cx="0" cy="0" rx="22" ry="70" fill="none" stroke="#60A5FA" stroke-width="1" stroke-dasharray="3 3"/>
+    <!-- Z axis -->
+    <line x1="0" y1="-85" x2="0" y2="85" stroke="#E8EEFF" stroke-width="1.2"/>
+    <text x="-6" y="-90" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="10" font-weight="700">|0⟩</text>
+    <text x="-6" y="98" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="10" font-weight="700">|1⟩</text>
+    <!-- State Vector Arrow pointing into superposition -->
+    <line x1="0" y1="0" x2="42" y2="-45" stroke="#34D399" stroke-width="2.5" filter="url(#qGlow)"/>
+    <circle cx="42" cy="-45" r="4" fill="#34D399"/>
+    <text x="48" y="-48" fill="#34D399" font-family="system-ui, sans-serif" font-size="10" font-weight="800">|ψ⟩</text>
+  </g>
+
+  <!-- Right Panel: Circuit & Histogram -->
+  <g transform="translate(265, 68)">
+    <!-- Circuit Area -->
+    <rect x="0" y="0" width="300" height="115" rx="8" fill="url(#qCard)" stroke="#20334F" stroke-width="1.2" filter="url(#qShadow)"/>
+    <text x="15" y="22" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Quantum Circuit: Bell State (|Φ⁺⟩)</text>
+    
+    <!-- Qubit wire q0 -->
+    <text x="15" y="55" fill="#8EA2C3" font-family="monospace" font-size="11">q₀: ──</text>
+    <line x1="45" y1="52" x2="280" y2="52" stroke="#475569" stroke-width="1.5"/>
+    <!-- Gate H on q0 -->
+    <rect x="75" y="38" width="28" height="28" rx="4" fill="#3478F6" stroke="#60A5FA" stroke-width="1"/>
+    <text x="84" y="56" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700">H</text>
+
+    <!-- Qubit wire q1 -->
+    <text x="15" y="95" fill="#8EA2C3" font-family="monospace" font-size="11">q₁: ──</text>
+    <line x1="45" y1="92" x2="280" y2="92" stroke="#475569" stroke-width="1.5"/>
+
+    <!-- CNOT Gate between q0 and q1 -->
+    <line x1="145" y1="52" x2="145" y2="92" stroke="#7867FF" stroke-width="2"/>
+    <circle cx="145" cy="52" r="5" fill="#7867FF"/>
+    <circle cx="145" cy="92" r="9" fill="none" stroke="#7867FF" stroke-width="2"/>
+    <line x1="145" y1="86" x2="145" y2="98" stroke="#7867FF" stroke-width="2"/>
+    <line x1="139" y1="92" x2="151" y2="92" stroke="#7867FF" stroke-width="2"/>
+
+    <!-- Measurement symbols -->
+    <rect x="210" y="38" width="28" height="28" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="217" y="56" font-size="12">📊</text>
+    <rect x="210" y="78" width="28" height="28" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="217" y="96" font-size="12">📊</text>
+
+    <!-- Histogram Area -->
+    <rect x="0" y="125" width="300" height="125" rx="8" fill="url(#qCard)" stroke="#20334F" stroke-width="1.2" filter="url(#qShadow)"/>
+    <text x="15" y="145" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Measurement Counts (1024 Shots)</text>
+    
+    <!-- Histogram Bars -->
+    <!-- Bar |00⟩ -->
+    <text x="35" y="235" fill="#E8EEFF" font-family="monospace" font-size="10" font-weight="700">|00⟩</text>
+    <rect x="30" y="165" width="45" height="55" rx="3" fill="#3478F6"/>
+    <text x="35" y="160" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="9" font-weight="600">516</text>
+
+    <!-- Bar |01⟩ (0) -->
+    <text x="105" y="235" fill="#8EA2C3" font-family="monospace" font-size="10">|01⟩</text>
+    <rect x="100" y="218" width="45" height="2" fill="#334155"/>
+    <text x="118" y="212" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="9">0</text>
+
+    <!-- Bar |10⟩ (0) -->
+    <text x="175" y="235" fill="#8EA2C3" font-family="monospace" font-size="10">|10⟩</text>
+    <rect x="170" y="218" width="45" height="2" fill="#334155"/>
+    <text x="188" y="212" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="9">0</text>
+
+    <!-- Bar |11⟩ -->
+    <text x="245" y="235" fill="#E8EEFF" font-family="monospace" font-size="10" font-weight="700">|11⟩</text>
+    <rect x="240" y="167" width="45" height="53" rx="3" fill="#7867FF"/>
+    <text x="245" y="162" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="9" font-weight="600">508</text>
+  </g>
+</svg>

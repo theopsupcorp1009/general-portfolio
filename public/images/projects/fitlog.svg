@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fitBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#05080f"/>
+    </linearGradient>
+    <linearGradient id="fitCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#152136"/>
+      <stop offset="100%" stop-color="#0d1624"/>
+    </linearGradient>
+    <linearGradient id="orangeStat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="blueStat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="emeraldStat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="fitShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#fitBg)"/>
+
+  <!-- Subtle diagonal lines -->
+  <g opacity="0.04" stroke="#60A5FA" stroke-width="2">
+    <line x1="-100" y1="0" x2="300" y2="400"/>
+    <line x1="0" y1="0" x2="400" y2="400"/>
+    <line x1="100" y1="0" x2="500" y2="400"/>
+    <line x1="200" y1="0" x2="600" y2="400"/>
+    <line x1="300" y1="0" x2="700" y2="400"/>
+  </g>
+
+  <!-- FitLog Nav Header -->
+  <rect x="35" y="25" width="530" height="42" rx="8" fill="url(#fitCard)" stroke="#20334F" stroke-width="1.2" filter="url(#fitShadow)"/>
+  <text x="50" y="51" font-size="16">💪</text>
+  <text x="75" y="51" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="14" font-weight="800" letter-spacing="1">FITLOG</text>
+  <text x="145" y="50" fill="#60A5FA" font-family="system-ui, sans-serif" font-size="10" font-weight="600">WORKOUT LIBRARY</text>
+
+  <!-- Plan & Saved Badges -->
+  <rect x="360" y="34" width="85" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="372" y="50" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="10">Plan: <tspan fill="#38BDF8" font-weight="700">3/5</tspan></text>
+  
+  <rect x="455" y="34" width="95" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="467" y="50" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="10">Saved: <tspan fill="#f59e0b" font-weight="700">4</tspan></text>
+
+  <!-- Metric Badges Row (My Plan Stats) -->
+  <g transform="translate(35, 78)">
+    <!-- Stat 1: Exercises -->
+    <rect x="0" y="0" width="166" height="52" rx="8" fill="url(#fitCard)" stroke="#20334F" stroke-width="1"/>
+    <rect x="12" y="10" width="32" height="32" rx="6" fill="#1e293b"/>
+    <text x="21" y="32" font-size="14">🏋️</text>
+    <text x="54" y="24" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="9" font-weight="600">PLANNED EXERCISES</text>
+    <text x="54" y="42" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="16" font-weight="800">3 Workouts</text>
+
+    <!-- Stat 2: Minutes -->
+    <rect x="182" y="0" width="166" height="52" rx="8" fill="url(#fitCard)" stroke="#20334F" stroke-width="1"/>
+    <rect x="194" y="10" width="32" height="32" rx="6" fill="#1e293b"/>
+    <text x="203" y="32" font-size="14">⏱️</text>
+    <text x="236" y="24" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="9" font-weight="600">ESTIMATED TIME</text>
+    <text x="236" y="42" fill="#34D399" font-family="system-ui, sans-serif" font-size="16" font-weight="800">55 Minutes</text>
+
+    <!-- Stat 3: Calories -->
+    <rect x="364" y="0" width="166" height="52" rx="8" fill="url(#fitCard)" stroke="#20334F" stroke-width="1"/>
+    <rect x="376" y="10" width="32" height="32" rx="6" fill="#1e293b"/>
+    <text x="385" y="32" font-size="14">🔥</text>
+    <text x="418" y="24" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="9" font-weight="600">EST. CALORIES BURNED</text>
+    <text x="418" y="42" fill="#f97316" font-family="system-ui, sans-serif" font-size="16" font-weight="800">480 kcal</text>
+  </g>
+
+  <!-- Workout Cards Row -->
+  <g transform="translate(35, 142)">
+    <!-- Card 1: Bench Press -->
+    <rect x="0" y="0" width="166" height="175" rx="8" fill="url(#fitCard)" stroke="#20334F" stroke-width="1.2" filter="url(#fitShadow)"/>
+    <rect x="10" y="10" width="146" height="70" rx="6" fill="#1a273e"/>
+    <!-- Dumbbell illustration -->
+    <circle cx="50" cy="45" r="14" fill="#334155"/>
+    <rect x="50" y="42" width="66" height="6" rx="3" fill="#64748b"/>
+    <circle cx="116" cy="45" r="14" fill="#334155"/>
+    <text x="14" y="98" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Barbell Bench Press</text>
+    <text x="14" y="114" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="10">Chest • Barbell • Advanced</text>
+    <text x="14" y="134" fill="#34D399" font-family="system-ui, sans-serif" font-size="10" font-weight="600">⏱️ 20 min  🔥 180 kcal</text>
+    <rect x="10" y="145" width="146" height="22" rx="4" fill="#2563eb"/>
+    <text x="45" y="160" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="600">✓ In Today's Plan</text>
+
+    <!-- Card 2: Barbell Squat -->
+    <rect x="182" y="0" width="166" height="175" rx="8" fill="url(#fitCard)" stroke="#20334F" stroke-width="1.2" filter="url(#fitShadow)"/>
+    <rect x="192" y="10" width="146" height="70" rx="6" fill="#1a273e"/>
+    <circle cx="232" cy="45" r="16" fill="#334155"/>
+    <rect x="232" y="42" width="66" height="6" rx="3" fill="#64748b"/>
+    <circle cx="298" cy="45" r="16" fill="#334155"/>
+    <text x="196" y="98" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Barbell Back Squat</text>
+    <text x="196" y="114" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="10">Legs • Barbell • Advanced</text>
+    <text x="196" y="134" fill="#34D399" font-family="system-ui, sans-serif" font-size="10" font-weight="600">⏱️ 25 min  🔥 220 kcal</text>
+    <rect x="192" y="145" width="146" height="22" rx="4" fill="#2563eb"/>
+    <text x="227" y="160" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="600">✓ In Today's Plan</text>
+
+    <!-- Card 3: Pull-Ups -->
+    <rect x="364" y="0" width="166" height="175" rx="8" fill="url(#fitCard)" stroke="#20334F" stroke-width="1.2" filter="url(#fitShadow)"/>
+    <rect x="374" y="10" width="146" height="70" rx="6" fill="#1a273e"/>
+    <line x1="390" y1="30" x2="504" y2="30" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="447" cy="48" r="8" fill="#38BDF8"/>
+    <path d="M 435 56 L 447 48 L 459 56" stroke="#38BDF8" stroke-width="4" fill="none"/>
+    <text x="378" y="98" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Pull-Ups</text>
+    <text x="378" y="114" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="10">Back • Bodyweight • Intermediate</text>
+    <text x="378" y="134" fill="#34D399" font-family="system-ui, sans-serif" font-size="10" font-weight="600">⏱️ 10 min  🔥 80 kcal</text>
+    <rect x="374" y="145" width="146" height="22" rx="4" fill="#2563eb"/>
+    <text x="409" y="160" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="600">✓ In Today's Plan</text>
+  </g>
+</svg>

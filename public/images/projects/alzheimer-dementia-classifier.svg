@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mriBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18"/>
+      <stop offset="100%" stop-color="#020409"/>
+    </linearGradient>
+    <linearGradient id="mriCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d182b"/>
+      <stop offset="100%" stop-color="#070e1b"/>
+    </linearGradient>
+    <radialGradient id="brainGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#1e3a8a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0b1329" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mriSlice1" cx="50%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7dd3fc" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#1e3a5f" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#070d18" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mriShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#mriBg)"/>
+
+  <!-- Streamlit Top Bar -->
+  <rect x="35" y="20" width="530" height="38" rx="8" fill="url(#mriCard)" stroke="#20334F" stroke-width="1.2" filter="url(#mriShadow)"/>
+  <text x="50" y="44" font-size="16">🧠</text>
+  <text x="75" y="44" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Alzheimer's Dementia Stage Classifier</text>
+  <rect x="420" y="28" width="130" height="22" rx="4" fill="#1e293b"/>
+  <text x="430" y="43" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Streamlit • Keras CNN</text>
+
+  <!-- 4 Brain MRI Scan Slices Panel (matching screenshot) -->
+  <rect x="35" y="68" width="530" height="150" rx="8" fill="#050a14" stroke="#20334F" stroke-width="1.2"/>
+  
+  <!-- Slice 1: Non Demented -->
+  <g transform="translate(48, 76)">
+    <rect width="120" height="134" rx="6" fill="#000000" stroke="#1e293b" stroke-width="1"/>
+    <!-- Outer brain outline -->
+    <ellipse cx="60" cy="62" rx="44" ry="52" fill="#08101e" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 1" opacity="0.7"/>
+    <!-- Brain ventricles & lobes -->
+    <path d="M 45 40 C 35 50, 32 75, 48 90 C 56 80, 56 60, 45 40 Z" fill="#93c5fd" opacity="0.7"/>
+    <path d="M 75 40 C 85 50, 88 75, 72 90 C 64 80, 64 60, 75 40 Z" fill="#93c5fd" opacity="0.7"/>
+    <!-- Corpus callosum / ventricle core -->
+    <ellipse cx="53" cy="64" rx="4" ry="14" fill="#000"/>
+    <ellipse cx="67" cy="64" rx="4" ry="14" fill="#000"/>
+    <text x="60" y="125" text-anchor="middle" fill="#34D399" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Non Demented</text>
+  </g>
+
+  <!-- Slice 2: Very Mild -->
+  <g transform="translate(180, 76)">
+    <rect width="120" height="134" rx="6" fill="#000000" stroke="#1e293b" stroke-width="1"/>
+    <ellipse cx="60" cy="62" rx="43" ry="51" fill="#08101e" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 1" opacity="0.7"/>
+    <path d="M 46 42 C 37 52, 35 73, 49 88 C 56 79, 56 61, 46 42 Z" fill="#93c5fd" opacity="0.6"/>
+    <path d="M 74 42 C 83 52, 85 73, 71 88 C 64 79, 64 61, 74 42 Z" fill="#93c5fd" opacity="0.6"/>
+    <ellipse cx="52" cy="64" rx="5" ry="15" fill="#000"/>
+    <ellipse cx="68" cy="64" rx="5" ry="15" fill="#000"/>
+    <text x="60" y="125" text-anchor="middle" fill="#60A5FA" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Very Mild Demented</text>
+  </g>
+
+  <!-- Slice 3: Mild -->
+  <g transform="translate(312, 76)">
+    <rect width="120" height="134" rx="6" fill="#000000" stroke="#1e293b" stroke-width="1"/>
+    <ellipse cx="60" cy="62" rx="42" ry="50" fill="#08101e" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 1" opacity="0.7"/>
+    <path d="M 47 44 C 39 54, 38 71, 50 86 C 56 78, 56 62, 47 44 Z" fill="#93c5fd" opacity="0.5"/>
+    <path d="M 73 44 C 81 54, 82 71, 70 86 C 64 78, 64 62, 73 44 Z" fill="#93c5fd" opacity="0.5"/>
+    <ellipse cx="51" cy="64" rx="6" ry="17" fill="#000"/>
+    <ellipse cx="69" cy="64" rx="6" ry="17" fill="#000"/>
+    <text x="60" y="125" text-anchor="middle" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Mild Demented</text>
+  </g>
+
+  <!-- Slice 4: Moderate -->
+  <g transform="translate(444, 76)">
+    <rect width="120" height="134" rx="6" fill="#000000" stroke="#1e293b" stroke-width="1"/>
+    <ellipse cx="60" cy="62" rx="40" ry="48" fill="#08101e" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 1" opacity="0.7"/>
+    <path d="M 48 46 C 41 56, 40 69, 51 84 C 56 77, 56 63, 48 46 Z" fill="#93c5fd" opacity="0.4"/>
+    <path d="M 72 46 C 79 56, 80 69, 69 84 C 64 77, 64 63, 72 46 Z" fill="#93c5fd" opacity="0.4"/>
+    <ellipse cx="50" cy="64" rx="8" ry="19" fill="#000"/>
+    <ellipse cx="70" cy="64" rx="8" ry="19" fill="#000"/>
+    <text x="60" y="125" text-anchor="middle" fill="#ef4444" font-family="system-ui, sans-serif" font-size="9" font-weight="700">Moderate Demented</text>
+  </g>
+
+  <!-- Classification Output & Probability Bars -->
+  <g transform="translate(35, 230)">
+    <rect width="530" height="95" rx="8" fill="url(#mriCard)" stroke="#20334F" stroke-width="1.2"/>
+    <text x="20" y="24" fill="#E8EEFF" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Prediction Analysis (Trained 128x128 CNN Inference)</text>
+
+    <!-- Prob bar 1: Non Demented -->
+    <text x="20" y="46" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="10">Non Demented</text>
+    <rect x="150" y="37" width="300" height="10" rx="5" fill="#131e31"/>
+    <rect x="150" y="37" width="270" height="10" rx="5" fill="#34D399"/>
+    <text x="460" y="46" fill="#34D399" font-family="system-ui, sans-serif" font-size="10" font-weight="700">90.2%</text>
+
+    <!-- Prob bar 2: Very Mild -->
+    <text x="20" y="62" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="10">Very Mild Demented</text>
+    <rect x="150" y="53" width="300" height="10" rx="5" fill="#131e31"/>
+    <rect x="150" y="53" width="22" height="10" rx="5" fill="#60A5FA"/>
+    <text x="460" y="62" fill="#8EA2C3" font-family="system-ui, sans-serif" font-size="10">7.4%</text>
+
+    <!-- Disclaimer notice -->
+    <text x="20" y="82" fill="#64748b" font-family="system-ui, sans-serif" font-size="9" font-style="italic">Prototype for educational purposes only • Not a medical diagnostic tool</text>
+  </g>
+</svg>
